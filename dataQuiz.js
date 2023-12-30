@@ -113,11 +113,11 @@ export const dataQuiz = [
 		<h3 data-question="Повна інформація" style="text-align:center;width:100%">Повна інформація</h3>
 		<p>Перевірте правильность введеної інформації</p>
 		<label for="nameUser" class="column-start">
-			<span>Ваше ім'я:</span>
+			<span>Ваше ім'я*:</span>
 			<input type="text" placeholder="Ваше ім'я" id="nameUser" class="input-contact input">
 		</label>
 		<label for="secondNameUser" class="column-start">
-			<span>Ваша фамілія:</span>
+			<span>Ваша фамілія*:</span>
 			<input type="text" placeholder="Ваше призвіще" id="secondNameUser" class="input-contact input">
 		</label>
 		<label for="telUser" class="column-start">
