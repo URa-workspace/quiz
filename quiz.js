@@ -17,8 +17,6 @@ let answer = {
   question3: "",
   question4: "",
 };
-// let title
-// let text
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -156,7 +154,7 @@ function gameStart() {
     spinBtn.style.opacity = '.85'
     spinBtn.style.pointerEvents = 'none';
     wheel.style.transform = "rotate(" + spin + "deg)";
-    // spin += Math.ceil(Math.random() * 3600);
+    spin += Math.ceil(Math.random() * 3600);
     const numbers = document.querySelectorAll('.number')
     setTimeout(() => {
       let val = new Array();
@@ -168,8 +166,6 @@ function gameStart() {
       numbers.forEach((n) => {
         n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
         discountText.textContent = "Вітаєм!!! Ваша знижка:";
-        // answer = [];
-        // answer.push(`${discountInput.value}`);
         prevBtn.classList.remove("active");
         nextBtn.classList.add("active");
       });
