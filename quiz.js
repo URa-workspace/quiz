@@ -160,7 +160,7 @@ function gameStart() {
       let val = new Array();
       numbers.forEach(n => {
         // val.push(n.getBoundingClientRect().top);
-        alert(n)
+        alert(n.getBoundingClientRect().top)
       })
       // let min = Math.min.apply(null, val);
       // numbers.forEach((n) => {
