@@ -18,10 +18,9 @@ let answer = {
   question4: "",
 };
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const quizOpenBtns = document.querySelectorAll(".quiz-open");
-  
+
   if (quizOpenBtns.length >= 0) {
     quizOpenBtns.forEach((item) => {
       item.addEventListener("click", () => {
@@ -34,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // инициализируем квиз
 function initQuiz(params) {
-  renderTemplate(indexBlock, quizBlock); 
-  const allLength = dataQuiz.length
-  allCountQuestion.textContent = allLength
+  renderTemplate(indexBlock, quizBlock);
+  const allLength = dataQuiz.length;
+  allCountQuestion.textContent = allLength;
 }
 // создаем шаблон
 function renderTemplate(index, container) {
@@ -48,40 +47,41 @@ function renderTemplate(index, container) {
       quizFooter.style.display = "flex";
     }
     if (dataQuiz.length === index) {
-      btns.forEach(btn => {
-        btn.style.display = 'none'
-      })
-      btnSend.style.display = 'block'
+      btns.forEach((btn) => {
+        btn.style.display = "none";
+      });
+      btnSend.style.display = "block";
     }
   });
 }
 // переключаем шаблон
 function toggleTemplate(quiz) {
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener("click", () => {
     addData(quiz);
-    nextBtn.classList.remove('active')
+    nextBtn.classList.remove("active");
     indexBlock = indexBlock + 1;
     renderTemplate(indexBlock, quizBlock);
-    
+
     indexBlock == 2 || indexBlock == 3
       ? prevBtn.classList.add("active")
       : false;
     indexBlock === 4 ? gameStart(quiz) : false;
-    indexBlock > 3 ? document.querySelector('.quiz__bunner').style.display = 'none' : false
+    indexBlock > 3
+      ? (document.querySelector(".quiz__bunner").style.display = "none")
+      : false;
     currentCounter.textContent = indexBlock;
-    indexBlock === 5 ? addDataToForm(quiz): false
-  })
-  
-  prevBtn.addEventListener('click', () => {
+    indexBlock === 5 ? addDataToForm(quiz) : false;
+  });
+
+  prevBtn.addEventListener("click", () => {
     if (indexBlock > 1) {
       indexBlock = indexBlock - 1;
       renderTemplate(indexBlock, quizBlock);
-      
     }
     indexBlock == 1 || indexBlock >= 3
       ? prevBtn.classList.remove("active")
       : false;
-  })
+  });
 }
 // валидация
 function validQuiz(quiz) {
@@ -91,31 +91,33 @@ function validQuiz(quiz) {
     switch (e.target.type) {
       case "checkbox":
         e.target.checked ? (isValid = true) : e.target.classList.add("error");
+        break;
       case "radio":
         e.target.checked ? (isValid = true) : e.target.classList.add("error");
+        break;
       case "text":
         e.target.value ? (isValid = true) : e.target.classList.add("error");
+        break;
       case "tel":
         e.target.value ? (isValid = true) : e.target.classList.add("error");
+        break;
     }
 
     return {
       isValid,
-      answer
+      answer,
     };
-    
   });
-  
 }
 // добавляем собранные данные
 function addData(quiz) {
   const questions = document.querySelectorAll("h3[data-question]");
-  const inps = quiz.querySelectorAll('.input')
-  questions.forEach(q => {
+  const inps = quiz.querySelectorAll(".input");
+  questions.forEach((q) => {
     if (q.dataset.question == "Що вас цікавить?") {
-      inps.forEach(i => {
-        i.checked ? answer.question2 = i.value : false
-      })
+      inps.forEach((i) => {
+        i.checked ? (answer.question2 = i.value) : false;
+      });
     } else if (q.dataset.question == "Чому не звернулися раніше?") {
       inps.forEach((i) => {
         i.checked ? (answer.question3 = i.value) : false;
@@ -130,15 +132,18 @@ function addData(quiz) {
         switch (i.id) {
           case "name":
             answer.name = i.value;
+            break;
           case "secondName":
             answer.secondName = i.value;
+            break;
           case "tel":
             answer.tel = i.value;
+            break;
         }
         return answer;
       });
     }
-  })
+  });
 }
 
 function gameStart() {
@@ -150,53 +155,56 @@ function gameStart() {
     const discountInput = document.querySelector("input#discountInput");
     const discountText = document.querySelector("p#discountText span");
 
-    spinBtn.classList.remove('active')
-    spinBtn.style.opacity = '.85'
-    spinBtn.style.pointerEvents = 'none';
+    spinBtn.classList.remove("active");
+    spinBtn.style.opacity = ".85";
+    spinBtn.style.pointerEvents = "none";
     wheel.style.transform = "rotate(" + spin + "deg)";
     spin += Math.ceil(Math.random() * 3600);
-    const numbers = document.querySelectorAll('.number')
+    const numbers = document.querySelectorAll(".number");
     setTimeout(() => {
-      let val = new Array();
-      numbers.forEach(n => {
-        val.push(n.getBoundingClientRect().top);
-        
-      })
-      let min = Math.min.apply(null, val);
-      
+      let val = [];
       numbers.forEach((n) => {
-        if (n.getBoundingClientRect().top == min) {
-          discountInput.value = `${n.id}%`
-          alert(`n.getBoundingClientRect: ${n.getBoundingClientRect().top}, input: ${discountInput.value}, n.id: ${n.id}`)
-        } else false;
-        discountText.textContent = "Вітаєм!!! Ваша знижка:";
+        val.push(n.getBoundingClientRect().top);
+      });
+      let min = Math.min.apply(null, val);
+      numbers.forEach((n) => {
+        n.getBoundingClientRect().top === min
+          ? (discountInput.value = `${n.id}%`)
+          : false;
+        // discountText.textContent = "Вітаєм!!! Ваша знижка:";
         prevBtn.classList.remove("active");
-        nextBtn.classList.add("active"); 
+        nextBtn.classList.add("active");
       });
     }, 5000);
   });
 }
 
 function addDataToForm(quiz) {
-  const inps = quiz.querySelectorAll('.input')
-  inps.forEach(inp => {
+  const inps = quiz.querySelectorAll(".input");
+  inps.forEach((inp) => {
     for (let key in answer) {
       switch (key) {
         case "name":
           inp.id === "nameUser" ? (inp.value = answer[key]) : false;
+          break;
         case "secondName":
           inp.id === "secondNameUser" ? (inp.value = answer[key]) : false;
+          break;
         case "tel":
           inp.id === "telUser" ? (inp.value = answer[key]) : false;
+          break;
         case "question2":
           inp.id === "q2" ? (inp.value = answer[key]) : false;
+          break;
         case "question3":
           inp.id === "q3" ? (inp.value = answer[key]) : false;
+          break;
         case "question4":
           inp.id === "q4" ? (inp.value = answer[key]) : false;
+          break;
       }
-      console.log(`key: ${answer[key]}`)
+      console.log(`key: ${answer[key]}`);
       console.log(`inp.id: ${inp.id}`);
     }
-  })
+  });
 }
