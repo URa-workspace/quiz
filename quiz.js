@@ -165,11 +165,11 @@ function gameStart() {
       let min = Math.min.apply(null, val);
       
       numbers.forEach((n) => {
-        alert(`min: ${min} & ${n.getBoundingClientRect().top}`)
-      //   n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
+        
+        n.getBoundingClientRect().top === min ? alert(`min: ${min} & ${n.getBoundingClientRect().top}`) : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
       //   prevBtn.classList.remove("active");
-      //   nextBtn.classList.add("active");
+      //   nextBtn.classList.add("active"); discountInput.value = `${n.id}%`
       });
     }, 5000);
   });
