@@ -66,7 +66,7 @@ export const dataQuiz = [
 	<h3 data-question="Ваша знижка" class="game__title" id="question4">Колесо Фортуни!</h3>				
 	<div class="game" id="game">
 		<label for="discountInput" style="cursor:text">
-			<p id="discountText"><span style="text-align:center;">Тисни "СТАРТ" - отримай знижку!</span>
+			<p id="discountText"><span style="text-align:center;">Тисни "СТАРТ" - отримай знижку!!!</span>
 				<input type="text" id="discountInput" class="input_frm input" value="">
 			</p>
 		</label>
