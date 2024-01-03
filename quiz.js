@@ -166,10 +166,10 @@ function gameStart() {
       
       numbers.forEach((n) => {
         
-        n.getBoundingClientRect().top === min ? alert(`input-value: ${discountInput.value}`) : false;
+        n.getBoundingClientRect().top === min ? (discountInput.value = `${n.id}%`) : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
       //   prevBtn.classList.remove("active");
-      //   nextBtn.classList.add("active"); discountInput.value = `${n.id}%`
+      //   nextBtn.classList.add("active"); 
       });
     }, 5000);
   });
