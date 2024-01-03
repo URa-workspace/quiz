@@ -67,7 +67,7 @@ export const dataQuiz = [
 	<div class="game" id="game">
 		<label for="discountInput" style="cursor:text">
 			<p id="discountText"><span style="text-align:center;">Тисни "СТАРТ" - отримай знижку!!!</span>
-				<input type="text" id="discountInput" class="input_frm input" value="s" autocomplete="off">
+				<input type="text" id="discountInput" class="input_frm input" value="⭣" autocomplete="off">
 			</p>
 		</label>
 		<div class="game__container">
