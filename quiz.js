@@ -163,14 +163,14 @@ function gameStart() {
         
       })
       let min = Math.min.apply(null, val);
-      alert(`min: ${min} & ${n.getBoundingClientRect().top}`)
-      alert()
-      // numbers.forEach((n) => {
+      
+      numbers.forEach((n) => {
+        alert(`min: ${min} & ${n.getBoundingClientRect().top}`)
       //   n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
       //   prevBtn.classList.remove("active");
       //   nextBtn.classList.add("active");
-      // });
+      });
     }, 5000);
   });
 }
