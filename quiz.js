@@ -159,10 +159,11 @@ function gameStart() {
     setTimeout(() => {
       let val = new Array();
       numbers.forEach(n => {
-        // val.push(n.getBoundingClientRect().top);
-        alert(n.getBoundingClientRect().top)
+        val.push(n.getBoundingClientRect().top);
+        
       })
-      // let min = Math.min.apply(null, val);
+      let min = Math.min.apply(null, val);
+      alert(min)
       // numbers.forEach((n) => {
       //   n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
