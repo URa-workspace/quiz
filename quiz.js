@@ -159,16 +159,16 @@ function gameStart() {
     setTimeout(() => {
       let val = new Array();
       numbers.forEach(n => {
-        val.push(n.getBoundingClientRect().top);
-        
+        // val.push(n.getBoundingClientRect().top);
+        alert(n)
       })
-      let min = Math.min.apply(null, val);
-      numbers.forEach((n) => {
-        n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
-        discountText.textContent = "Вітаєм!!! Ваша знижка:";
-        prevBtn.classList.remove("active");
-        nextBtn.classList.add("active");
-      });
+      // let min = Math.min.apply(null, val);
+      // numbers.forEach((n) => {
+      //   n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
+      //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
+      //   prevBtn.classList.remove("active");
+      //   nextBtn.classList.add("active");
+      // });
     }, 5000);
   });
 }
