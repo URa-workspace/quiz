@@ -164,6 +164,7 @@ function gameStart() {
       })
       let min = Math.min.apply(null, val);
       alert(min)
+      alert(n.getBoundingClientRect().top)
       // numbers.forEach((n) => {
       //   n.getBoundingClientRect().top === min ? discountInput.value = `${n.id}%` : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
