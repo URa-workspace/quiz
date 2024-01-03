@@ -166,7 +166,7 @@ function gameStart() {
       
       numbers.forEach((n) => {
         
-        n.getBoundingClientRect().top === min ? alert(`min: ${min} & ${n.getBoundingClientRect().top}`) : false;
+        n.getBoundingClientRect().top === min ? alert(`${n.id}%`) : false;
       //   discountText.textContent = "Вітаєм!!! Ваша знижка:";
       //   prevBtn.classList.remove("active");
       //   nextBtn.classList.add("active"); discountInput.value = `${n.id}%`
