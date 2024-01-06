@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Popup</title>
 	<link rel="stylesheet" href="./css/popup.css">
@@ -10,27 +9,24 @@
 </head>
 <body>
 	<div class="wrapper">
-		<a href="#popupQuiz" class="button popup-link quiz-open">А&nbsp;к&nbsp;ц&nbsp;і&nbsp;я</a>
+		<a href="#pQuiz" class="button popup-link quiz-open">Акція</a>
 
-		<div class="popup" id="popupQuiz">
+		<div class="popup" id="pQuiz">
 			<div class="popup__body">
 				<div class="popup__content">
 					<a href="#" class="popup__close close-popup"></a>
 					<div class="quiz">
 						<div class="quiz__bunner">
-							<img src="./знижки.png" alt="">
-							<p class="offer">Дайте відповідь на кілька питань та виграйте свою знижку!</p>
+							<img src="./img/знижки.png" alt="Авіценна-СТ розіграш знижок">
+							<p class="offer hide-after-send">Дайте відповідь на кілька питань та виграйте свою знижку!</p>
 							<hr>
 						</div>
 						<div class="quiz__info">
-							<form action="#" method="post" class="quiz__form" id="quizForm">
+							<form action="#" method="post" class="quiz__form hide-after-send" id="quizForm">
 								<div class="quiz__header">
-									<h2>Вигравай свою знижку!!!</h2>
+									<h2>Вигравай свою знижку!</h2>
 									<div class="counter">
 										Питання <span class="current-item">1</span> із <span class="all-items">0</span>
-									</div>
-									<div class="progress_bar">
-										<div class="progress"></div>
 									</div>
 								</div>
 							
@@ -44,14 +40,23 @@
 							
 								</div>
 							
-								<div class="quiz__footer">
+								<div class="quiz__footer hide-after-send">
 									<div class="quiz__footer-control">
-										<button type="button" class="btn btn__full-width btn__submit" id="send">Відправити</button>
+										<button type="submit" class="btn btn__full-width btn__submit" id="send">Відправити</button>
 										<button type="button" class="btn btnPrev">Назад</button><span> </span>
 										<button type="button" class="btn btnNext">Вперед</button>
 									</div>
 								</div>
 							</form>
+							<div class="quiz__response hide">
+								<h2>Вітаємо зі знижкою!</h2>
+								<p>
+									Дякуємо вам за участь у розіграші!
+								</p>
+								<p>
+									Найближчім часом ми зв'яжемось з вами для уточнення деталей.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
